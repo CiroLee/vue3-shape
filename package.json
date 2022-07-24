@@ -1,6 +1,6 @@
 {
   "name": "vue3-shape",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "shep component for vue3 written by pure css",
   "main": "dist/index.umd.cjs",
   "module": "dist/index.mjs",
