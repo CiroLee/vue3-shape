@@ -1,0 +1,17 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["stylelint-config-standard", "stylelint-config-standard-scss", "stylelint-config-recommended-vue"],
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "selector-class-pattern": "^[-_a-zA-Z0-9]*$",
+    "color-function-notation": "modern",
+    "string-quotes": "single",
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": ["inside-block"]
+      }
+    ],
+    "max-line-length": 200
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "vue3-shape",
+  "version": "0.0.1",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
+  "style": "dist/index.css",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/lib.js",
+      "require": "./dist/lib.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "css",
+    "shape",
+    "vue3"
+  ],
+  "homepage": "https://github.com/CiroLee/vue3-shape",
+  "bugs": {
+    "url": "https://github.com/CiroLee/vue3-shape/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node copy.js",
+    "lint": "eslint --config .eslintrc.js",
+    "lint:css": "stylelint packages/**/*.{vue,css,sass,scss} --config .stylelint.json",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{jsx,tsx,ts,js,json,vue,md}": [
+      "eslint --config .eslintrc.js"
+    ],
+    "*.{vue,css,sass,scss}": [
+      "stylelint --fix --config .stylelint.json"
+    ]
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.0.3",
+    "@types/node": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vue/compiler-sfc": "^3.2.37",
+    "autoprefixer": "^10.4.7",
+    "commitlint": "^17.0.3",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.2.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.14",
+    "postcss-html": "^1.5.0",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.0",
+    "stylelint": "^14.9.1",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-scss": "^4.3.0",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.2",
+    "vue": "^3.2.37",
+    "vue-tsc": "^0.31.4"
+  },
+  "license": "MIT",
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ],
+  "dependencies": {
+    "@soerenmartius/vue3-clipboard": "^0.1.2"
+  }
+}
