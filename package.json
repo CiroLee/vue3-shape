@@ -1,13 +1,14 @@
 {
   "name": "vue3-shape",
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "description": "shep component for vue3 written by pure css",
   "main": "dist/index.umd.cjs",
-  "module": "dist/index.js",
-  "style": "dist/index.css",
+  "module": "dist/index.mjs",
+  "style": "dist/style.css",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/lib.js",
+      "import": "./dist/lib.mjs",
       "require": "./dist/lib.umd.cjs"
     }
   },
@@ -15,9 +16,10 @@
     "dist"
   ],
   "keywords": [
-    "css",
+    "css3",
     "shape",
-    "vue3"
+    "vue3",
+    "clip-path"
   ],
   "homepage": "https://github.com/CiroLee/vue3-shape",
   "bugs": {
@@ -67,6 +69,7 @@
     "stylelint-scss": "^4.3.0",
     "typescript": "^4.7.4",
     "vite": "^3.0.2",
+    "vite-plugin-libcss": "^1.0.5",
     "vue": "^3.2.37",
     "vue-tsc": "^0.31.4"
   },
@@ -76,8 +79,5 @@
     "> 1%",
     "iOS 7",
     "last 3 iOS versions"
-  ],
-  "dependencies": {
-    "@soerenmartius/vue3-clipboard": "^0.1.2"
-  }
+  ]
 }

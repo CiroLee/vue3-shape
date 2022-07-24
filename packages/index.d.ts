@@ -1,9 +1,9 @@
-declare const Shape: import("vue").DefineComponent<{
+declare const Shape: import('vue').DefineComponent<{
   type: string;
-  size?: number | string;
-  width?: number | string;
-  height?: number | string;
-  color?: string;
+  size?: number | string | null;
+  width?: number | string | null;
+  height?: number | string | null;
+  color?: string | null;
 }>;
 
-export { Shape }
+export { Shape };

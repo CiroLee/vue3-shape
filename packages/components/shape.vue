@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<IProps>(), {
   height: undefined,
 });
 const transWidthUnit = (val: number | string) => {
-  return typeof Number(val) ? `${val}px` : val;
+  return Number(val) ? `${val}px` : val;
 };
 const width = computed(() => (props.width ? transWidthUnit(props.width) : transWidthUnit(props.size)));
 const height = computed(() => (props.height ? transWidthUnit(props.height) : transWidthUnit(props.size)));

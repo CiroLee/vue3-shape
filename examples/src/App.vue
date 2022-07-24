@@ -1,7 +1,8 @@
 <template>
   <div class="vue3-shape">
-    <div class="shapes">
-      <div class="box" v-for="item in shapeConfig" :key="item.type" @click="copy(item)">
+    <a class="repo" href="https://github.com/CiroLee/vue3-shape" target="_blank">Github</a>
+    <div class="shapes" :class="{ copied: showCopiedTip }">
+      <div v-for="item in shapeConfig" :key="item.type" class="box" @click="copy(item)">
         <shape :type="item.type" :size="size" :color="color" :width="width" :height="height" />
         <p>{{ item.type }}</p>
       </div>
@@ -9,20 +10,20 @@
     <div class="operate">
       <div class="panel">
         <label class="color-panel">
-          <input type="color" v-model="color" />
+          <input v-model="color" type="color" />
         </label>
         <span>{{ color }}</span>
       </div>
       <div class="panel">
         <p>size:</p>
-        <input min="0" max="100" step="1" class="range-panel" type="range" v-model="size" @input="sizeChange" />
-        <input class="number" max="100" type="number" v-model="size" />
+        <input v-model="size" min="0" max="100" step="1" class="range-panel" type="range" @input="sizeChange" />
+        <input v-model="size" class="number" max="100" type="number" />
       </div>
       <div class="panel">
         <p>width:</p>
-        <input class="number" max="100" type="number" v-model="width" />
+        <input v-model="width" class="number" max="100" type="number" />
         <p>height:</p>
-        <input class="number" max="100" type="number" v-model="height" />
+        <input v-model="height" class="number" max="100" type="number" />
       </div>
     </div>
   </div>
@@ -30,13 +31,14 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { toClipboard } from '@soerenmartius/vue3-clipboard';
-import Shape from '@pkg/components/shape.vue';
+import { Shape } from 'vue3-shape';
 import { shapeConfig } from './config';
 const color = ref('#000000');
 const size = ref(36);
 const width = ref(null);
 const height = ref(null);
-
+let timer: number = 0;
+const showCopiedTip = ref(false);
 const sizeChange = () => {
   width.value && (width.value = null);
   height.value && (height.value = null);
@@ -44,19 +46,42 @@ const sizeChange = () => {
 
 const copy = (item: { type: string; cname?: string }) => {
   console.log(item, size.value, width.value, height.value);
-  toClipboard(`<shape type="${item.type}" />`);
+  toClipboard(`<shape type="${item.type}" />`).then(() => {
+    console.log(123);
+    showCopiedTip.value = true;
+    timer = setTimeout(() => {
+      showCopiedTip.value = false;
+      clearTimeout(timer);
+    }, 1500) as unknown as number;
+  });
 };
 </script>
 <style lang="scss">
-body {
-  margin: 0;
-}
-
 .vue3-shape {
   display: flex;
   height: 100vh;
   justify-content: center;
   padding: 0 18px;
+  position: relative;
+}
+
+.repo {
+  text-decoration: none;
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    display: inline-block;
+    background: url('./assets/github-fill.svg') center no-repeat;
+    background-size: 100% auto;
+  }
 }
 
 .shapes {
@@ -66,6 +91,21 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 120px);
   grid-template-rows: repeat(6, 120px);
+  position: relative;
+  &.copied::before {
+    content: 'Copied!';
+    height: 20px;
+    color: #0f7721;
+    position: absolute;
+    top: -52px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 22px;
+    background: #b1fdbd;
+    border-radius: 4px;
+    line-height: 1.2;
+  }
   .box {
     display: flex;
     flex-direction: column;
