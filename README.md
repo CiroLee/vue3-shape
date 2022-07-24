@@ -2,7 +2,7 @@
 > 简单易用的css图形组件, 由纯css3属性(clip-path)绘制, 无依赖。适用于vue3。     
 ### [中文](README.md) | [English](README-EN.md)     
 
-# 预览
+# [在线预览](https://cirolee.github.io/vue3-shape/)
 <div style="display: flex; justify-content: center; margin-bottom: 20px"><img src='./assets/shape-img-1.png' align="center" /></div>    
 
 # 安装

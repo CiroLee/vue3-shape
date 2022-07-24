@@ -3,7 +3,7 @@
 
 ### [中文](README.md) | [English](README-EN.md)    
 
-# preview    
+# [preview online](https://cirolee.github.io/vue3-shape/)   
 
 <div style="display: flex; justify-content: center"><img src='./assets/shape-img-1.png' align="center" /></div>
 
