@@ -23,12 +23,12 @@ yarn install vue3-shape
 
 全局引用
 ```javascript
-// entry main.ts
+// main.ts
 import { createApp } from 'vue';
 import App from './App.vue';
 import ShapeComponent from 'vue3-shape';
 
-createApp(App).mount('#app');
+createApp(App).use(ShapeComponent).mount('#app');
 
 // use in sfc
 // xxx/app.vue
