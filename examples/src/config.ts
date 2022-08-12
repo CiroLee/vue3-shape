@@ -124,6 +124,22 @@ export const shapeConfig: { type: string; cname?: string }[] = [
     cname: '箭头-下',
   },
   {
+    type: 'arrow-2-left',
+    cname: '箭头2-左',
+  },
+  {
+    type: 'arrow-2-up',
+    cname: '箭头2-上',
+  },
+  {
+    type: 'arrow-2-right',
+    cname: '箭头2-右',
+  },
+  {
+    type: 'arrow-2-down',
+    cname: '箭头2-下',
+  },
+  {
     type: 'tag-left',
     cname: '标签-左',
   },

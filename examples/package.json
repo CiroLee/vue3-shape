@@ -11,7 +11,7 @@
   "dependencies": {
     "@soerenmartius/vue3-clipboard": "^0.1.2",
     "vue": "^3.2.37",
-    "vue3-shape": "^0.0.3"
+    "vue3-shape": "^0.0.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.0",
